@@ -94,7 +94,7 @@
         /* --- HERO SECTION --- */
         #hero {
             min-height: 100vh;
-            /* FIXED: Using relative path for the background image */
+            /* Relative path for the background image */
             background: linear-gradient(rgba(12, 45, 72, 0.85), rgba(12, 45, 72, 0.85)), url('1769284848010.png');
             background-size: cover;
             background-position: center;
@@ -233,6 +233,50 @@
         .experience-badge h4 {
             font-size: 2rem;
             color: var(--accent-color);
+        }
+
+        /* --- TEAM SECTION --- */
+        #team {
+            padding: 5rem 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .team-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #888;
+        }
+        .team-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .team-card p {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         /* --- SERVICES SECTION --- */
@@ -617,7 +661,7 @@
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">My Team</a></li> <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -628,7 +672,7 @@
 
     <section id="hero">
         <h1>Quality Construction. Honest Pricing.</h1>
-        <p>From residential dreams to commercial realities, we build with integrity, precision, and over 25 years of expertise.</p>
+        <p>From residential dreams to commercial realities, we build with integrity, precision, and over 10 years of expertise.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn">Get a Free Quote</a>
             <a href="#portfolio" class="btn btn-outline">View Our Work</a>
@@ -639,11 +683,11 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>500+</h3>
+                    <h3>100+</h3>
                     <p>Projects Completed</p>
                 </div>
                 <div class="stat-item">
-                    <h3>25+</h3>
+                    <h3>10+</h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
@@ -662,7 +706,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Building Excellence Since 2025</h2>
+                    <h2>Building Excellence Since 2015</h2>
                     <p>Mayuri Constructions is a full-service construction company dedicated to delivering exceptional results for residential, commercial, and industrial projects. Our team of skilled professionals brings decades of combined experience to every job.</p>
                     <p>We believe in transparent communication, quality craftsmanship, and completing projects on time and within budget. From initial consultation to final walkthrough, we're committed to exceeding your expectations.</p>
                     <div class="about-features">
@@ -687,7 +731,7 @@
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construction team at work">
                     <div class="experience-badge">
-                        <h4>25+</h4>
+                        <h4>10+</h4>
                         <p>Years of Excellence</p>
                     </div>
                 </div>
@@ -695,6 +739,34 @@
         </div>
     </section>
 
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title">Meet My Team</h2>
+            <p class="section-subtitle">The dedicated experts behind every quality project we build.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">&#128104;</div>
+                    <h3>Senior Architect</h3>
+                    <p>Design & Planning</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">&#128103;</div>
+                    <h3>Site Engineer</h3>
+                    <p>Project Execution</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">&#128104;</div>
+                    <h3>Safety Officer</h3>
+                    <p>Quality Control</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">&#128103;</div>
+                    <h3>Client Manager</h3>
+                    <p>Customer Relations</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
@@ -834,14 +906,14 @@
                         <div class="info-icon">&#128205;</div>
                         <div class="info-text">
                             <h4>Office Location</h4>
-                            <p>1234 Construction Way, Suite 500<br>Building City, ST 12345</p>
+                            <p>Sai Anurag Colony, Bachupally<br>Hyderabad, Telangana 500090</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <div class="info-icon">&#128222;</div>
                         <div class="info-text">
                             <h4>Phone Number</h4>
-                            <p>(555) 123-4567</p>
+                            <p>+91 94948 88153</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -901,7 +973,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo">Mayuri Constructions</div>
-                    <p>Building excellence since 1999. We deliver quality construction services with integrity, precision, and dedication to our clients' vision.</p>
+                    <p>Building excellence since 2015. We deliver quality construction services with integrity, precision, and dedication to our clients' vision.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>

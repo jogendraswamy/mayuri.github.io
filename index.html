@@ -94,7 +94,6 @@
         /* --- HERO SECTION --- */
         #hero {
             min-height: 100vh;
-            /* Using the Raw GitHub URL for header.png */
             background: linear-gradient(rgba(12, 45, 72, 0.85), rgba(12, 45, 72, 0.85)), url('https://raw.githubusercontent.com/jogendraswamy/mayuri.github.io/main/header.png');
             background-size: cover;
             background-position: center;
@@ -373,6 +372,35 @@
             font-size: 0.9rem;
         }
 
+        /* --- GALLERY SECTION --- */
+        #gallery {
+            padding: 5rem 0;
+            text-align: center;
+            background: var(--light-bg);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
         /* --- TESTIMONIALS SECTION --- */
         #testimonials {
             padding: 5rem 0;
@@ -430,7 +458,7 @@
         /* --- CONTACT SECTION --- */
         #contact {
             padding: 5rem 0;
-            background: var(--light-bg);
+            background: var(--white);
         }
         .contact-wrapper {
             display: grid;
@@ -664,6 +692,7 @@
                     <li><a href="#team">My Team</a></li> 
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -815,45 +844,58 @@
                 <div class="project-item">
                     <img src="vk.jpg" alt="Modern Luxury Villa">
                     <div class="project-overlay">
-                        <h4>Oceanview Luxury Villa</h4>
-                        <p>Residential | 5,200 sq ft | Completed 2025</p>
+                        <h4>Luxury Villas</h4>
                     </div>
                 </div>
                 <div class="project-item">
                     <img src="ira.jpg" alt="Corporate Tower">
                     <div class="project-overlay">
-                        <h4>Metro Corporate Tower</h4>
-                        <p>Commercial | 45 Floors | Completed 2024</p>
+                        <h4>Premium Gated Community</h4>
                     </div>
                 </div>
                 <div class="project-item">
                     <img src="knight.jpg" alt="Urban Apartments">
                     <div class="project-overlay">
-                        <h4>Downtown Apartments</h4>
-                        <p>Residential | 120 Units | Completed 2024</p>
+                        <h4>Duplex, Triplex Villas</h4>
                     </div>
                 </div>
                 <div class="project-item">
                     <img src="sunny.jpg" alt="Shopping Center">
                     <div class="project-overlay">
-                        <h4>Riverside Shopping Center</h4>
-                        <p>Commercial | 85,000 sq ft | Completed 2023</p>
+                        <h4>2 & 3 BHK Apartments</h4>
                     </div>
                 </div>
                 <div class="project-item">
                     <img src="sub.jpg" alt="Industrial Warehouse">
                     <div class="project-overlay">
-                        <h4>Logistics Distribution Center</h4>
-                        <p>Industrial | 200,000 sq ft | Completed 2023</p>
+                        <h4>Luxury Apartments</h4>
                     </div>
                 </div>
                 <div class="project-item">
                     <img src="polam.jpg" alt="Modern House">
                     <div class="project-overlay">
-                        <h4>Hillside Modern Residence</h4>
-                        <p>Residential | 4,800 sq ft | Completed 2025</p>
+                        <h4>Luxury Apartments</h4>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">A visual tour of our work and dedication.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="gal1.jpg" alt="Construction Gallery 1"></div>
+                <div class="gallery-item"><img src="gal2.jpg" alt="Construction Gallery 2"></div>
+                <div class="gallery-item"><img src="gal3.jpg" alt="Construction Gallery 3"></div>
+                <div class="gallery-item"><img src="gal4.jpg" alt="Construction Gallery 4"></div>
+                <div class="gallery-item"><img src="gal5.jpg" alt="Construction Gallery 5"></div>
+                <div class="gallery-item"><img src="gal6.jpg" alt="Construction Gallery 6"></div>
+                <div class="gallery-item"><img src="gal7.jpg" alt="Construction Gallery 7"></div>
+                <div class="gallery-item"><img src="gal8.jpg" alt="Construction Gallery 8"></div>
+                <div class="gallery-item"><img src="gal9.jpg" alt="Construction Gallery 9"></div>
+                <div class="gallery-item"><img src="gal10.jpg" alt="Construction Gallery 10"></div>
             </div>
         </div>
     </section>

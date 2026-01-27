@@ -288,14 +288,14 @@
             margin-bottom: 2rem;
         }
 
-        /* CUSTOM STYLE FOR MD CARD (3-Column Layout: Avatar | Name | Words) */
+        /* CUSTOM STYLE FOR MD CARD (3-Column Layout) */
         .team-leader .team-card {
             display: flex;
             flex-direction: row;
             align-items: center;
             text-align: left;
             gap: 40px;
-            max-width: 1000px !important; /* Wider to accommodate 3 columns */
+            max-width: 1000px !important;
             width: 95%;
             margin: 0 auto;
             padding: 3rem;
@@ -314,7 +314,7 @@
             flex-shrink: 0;
             text-align: center;
             min-width: 220px;
-            border-right: 1px solid #eee; /* Divider */
+            border-right: 1px solid #eee; 
             padding-right: 30px;
         }
 
@@ -352,6 +352,8 @@
             justify-content: center;
             font-size: 2rem;
             color: #888;
+            /* Ensures images fit perfectly in the circle */
+            object-fit: cover; 
         }
         .team-card h3 {
             color: var(--primary-color);
@@ -947,7 +949,7 @@
                     <div class="md-identity"> <h3>Vinay Kumar Pulagam</h3>
                         <p>Managing Director (MD)</p>
                     </div>
-                    <div class="md-message"> <h4 style="color: var(--primary-color); margin-bottom: 10px;">MD's Words</h4>
+                    <div class="md-message"> <h4 style="color: var(--primary-color); margin-bottom: 10px;">MD Word</h4>
                         <p class="team-desc">
                             We believe construction is about quality, trust, and long-term value.<br>
                             Every project is executed with precision, safety, and transparency.<br>
@@ -966,11 +968,11 @@
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">&#128103;</div>
-                    <h3>Ysahoda Sai Mane</h3>
+                    <h3>Yashoda Sai Mane</h3>
                     <p>Chief Financial Officer (CFO)</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">&#128104;</div>
+                    <img src="pt.jpg" alt="Trimurthulu Pulagam" class="team-avatar">
                     <h3>Trimurthulu Pulagam</h3>
                     <p>Sr. Manager Projects</p>
                 </div>
@@ -1116,8 +1118,8 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">&#128100;</div>
                         <div class="author-info">
-                            <h5>Raja Suraya Prasad</h5>
-                            <p>Bhavanam Squirrel Appartment, Tadapalli Vijayawada</p>
+                            <h5>Raja Surya Prasad</h5>
+                            <p>Bhavanam, Tadepalli Guntur</p>
                         </div>
                     </div>
                 </div>
@@ -1127,7 +1129,7 @@
                         <div class="author-avatar">&#128100;</div>
                         <div class="author-info">
                             <h5>N V V Nageswarao</h5>
-                            <p>Happy Homeowner</p>
+                            <p>Industrialist</p>
                         </div>
                     </div>
                 </div>
@@ -1152,7 +1154,7 @@
                         <div class="info-icon">&#128205;</div>
                         <div class="info-text">
                             <h4>Branch Office</h4>
-                            <p>Tadepalli, Vijayawada<br>Andhra Pradesh 522501</p>
+                            <p>Tadepalli, Guntur<br>Andhra Pradesh 522501</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1239,9 +1241,8 @@
                 </div>
                 <div class="footer-hours">
                     <h4>Business Hours</h4>
-                    <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
-                    <p>Saturday: 8:00 AM - 2:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                    <p>Sunday: 8:00 AM - 2:00 PM</p>
                     <p style="margin-top: 1rem;"><strong>Emergency:</strong> 24/7 Available</p>
                 </div>
             </div>

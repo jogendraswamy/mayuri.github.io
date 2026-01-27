@@ -288,15 +288,17 @@
             margin-bottom: 2rem;
         }
 
+        /* CUSTOM STYLE FOR MD CARD (3-Column Layout: Avatar | Name | Words) */
         .team-leader .team-card {
             display: flex;
             flex-direction: row;
             align-items: center;
             text-align: left;
-            gap: 30px;
-            max-width: 800px !important;
+            gap: 40px;
+            max-width: 1000px !important; /* Wider to accommodate 3 columns */
             width: 95%;
             margin: 0 auto;
+            padding: 3rem;
         }
         
         .team-leader .team-avatar {
@@ -307,8 +309,19 @@
             font-size: 3rem;
         }
 
-        .md-info {
+        /* Middle Column: Name */
+        .md-identity {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 220px;
+            border-right: 1px solid #eee; /* Divider */
+            padding-right: 30px;
+        }
+
+        /* Right Column: Words */
+        .md-message {
             flex-grow: 1;
+            padding-left: 10px;
         }
         
         .team-grid {
@@ -356,8 +369,8 @@
             font-weight: normal !important;
             text-transform: none !important;
             color: #555 !important;
-            margin-top: 1rem;
-            line-height: 1.5;
+            margin-top: 0.5rem;
+            line-height: 1.6;
             font-size: 0.95rem !important;
         }
 
@@ -718,6 +731,24 @@
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
+            /* Break MD card to stack on smaller desktops/tablets */
+            .team-leader .team-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 2rem;
+            }
+            .md-identity {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-right: 0;
+                padding-bottom: 20px;
+                width: 100%;
+            }
+            .md-message {
+                padding-left: 0;
+                text-align: center;
+            }
         }
         @media (max-width: 768px) {
             .header-top {
@@ -762,16 +793,6 @@
                 padding: 20px;
                 gap: 15px;
             }
-            
-            /* RESPONSIVE FIX FOR MD CARD */
-            .team-leader .team-card {
-                flex-direction: column;
-                text-align: center;
-            }
-            .team-leader .team-avatar {
-                margin-bottom: 1.5rem;
-            }
-
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -828,7 +849,7 @@
                     <ul>
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#team">My Team</a></li> 
+                        <li><a href="#team">Team</a></li> 
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Projects</a></li>
                         <li><a href="#gallery">Gallery</a></li>
@@ -848,7 +869,7 @@
 
     <section id="hero">
         <h1>Quality Construction. Honest Pricing.</h1>
-        <p>From residential dreams to commercial realities, we build with integrity, precision, and over 15 years of expertise.</p>
+        <p>From residential dreams to commercial realities, we build with integrity, precision, and over 18 years of expertise.</p>
         <div class="hero-buttons">
             <a href="#contact" class="btn">Get a Free Quote</a>
             <a href="#portfolio" class="btn btn-outline">View Our Work</a>
@@ -863,7 +884,7 @@
                     <p>Projects Completed</p>
                 </div>
                 <div class="stat-item">
-                    <h3><span class="counter" data-target="15">0</span>+</h3>
+                    <h3><span class="counter" data-target="18">0</span>+</h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
@@ -882,8 +903,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Crafting Legacies Since 2015</h2>
-                    <p>At Mayuri Constructions, we don't just build structures; we craft enduring legacies. With a foundation built on trust, safety, and uncompromising quality, we have been shaping the landscapes of Hyderabad and Telangana since 2015.</p>
+                    <h2>Crafting Legacies Since 2008</h2>
+                    <p>At Mayuri Constructions, we don't just build structures; we craft enduring legacies. With a foundation built on trust, safety, and uncompromising quality, we have been shaping the landscapes of Telangana and Andhra Pradesh since 2008.</p>
                     <p>From bespoke homes to expansive industrial hubs, every project is a testament to our engineering precision and unwavering commitment to your vision. We believe in creating spaces that stand the test of time, blending smart design with exceptional strength.</p>
                     <div class="about-features">
                         <div class="feature-item">
@@ -907,7 +928,7 @@
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Construction team at work">
                     <div class="experience-badge">
-                        <h4>15+</h4>
+                        <h4>18+</h4>
                         <p>Years of Excellence</p>
                     </div>
                 </div>
@@ -917,15 +938,22 @@
 
     <section id="team">
         <div class="container">
-            <h2 class="section-title">Meet My Team</h2>
+            <h2 class="section-title">Team</h2>
             <p class="section-subtitle">The dedicated experts behind every quality project we build.</p>
             
             <div class="team-leader">
                 <div class="team-card">
                     <div class="team-avatar">&#128104;</div>
-                    <div class="md-info"> <h3>Vinay Kumar Pulagam</h3>
+                    <div class="md-identity"> <h3>Vinay Kumar Pulagam</h3>
                         <p>Managing Director (MD)</p>
-                        <p class="team-desc">With a vision to redefine construction standards, Vinay leads with 15+ years of expertise, ensuring every project stands as a benchmark of quality and trust.</p>
+                    </div>
+                    <div class="md-message"> <h4 style="color: var(--primary-color); margin-bottom: 10px;">MD's Words</h4>
+                        <p class="team-desc">
+                            We believe construction is about quality, trust, and long-term value.<br>
+                            Every project is executed with precision, safety, and transparency.<br>
+                            Our experienced team is committed to timely and reliable delivery.<br>
+                            We build spaces that stand strong for generations.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1030,7 +1058,7 @@
                 <div class="project-item">
                     <img src="sunny.jpg" alt="Shopping Center">
                     <div class="project-overlay">
-                        <h4>2 & 3 BHK Apartments</h4>
+                        <h4>Luxury Club House</h4>
                     </div>
                 </div>
                 <div class="project-item">
@@ -1078,8 +1106,8 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">&#128100;</div>
                         <div class="author-info">
-                            <h5>Michael & Sarah Thompson</h5>
-                            <p>Homeowners, Oceanview Villa</p>
+                            <h5>Gopu Veera Hanuman</h5>
+                            <p>Diamond Plaza Kukatpally</p>
                         </div>
                     </div>
                 </div>
@@ -1088,8 +1116,8 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">&#128100;</div>
                         <div class="author-info">
-                            <h5>Jennifer Martinez</h5>
-                            <p>CEO, TechFlow Industries</p>
+                            <h5>Raja Suraya Prasad</h5>
+                            <p>Bhavanam Squirrel Appartment, Tadapalli Vijayawada</p>
                         </div>
                     </div>
                 </div>
@@ -1098,8 +1126,8 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">&#128100;</div>
                         <div class="author-info">
-                            <h5>Robert Chen</h5>
-                            <p>Operations Director, Global Logistics</p>
+                            <h5>N V V Nageswarao</h5>
+                            <p>Happy Homeowner</p>
                         </div>
                     </div>
                 </div>
@@ -1118,6 +1146,13 @@
                         <div class="info-text">
                             <h4>Office Location</h4>
                             <p>Sai Anurag Colony, Bachupally<br>Hyderabad, Telangana 500090</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">&#128205;</div>
+                        <div class="info-text">
+                            <h4>Branch Office</h4>
+                            <p>Tadepalli, Vijayawada<br>Andhra Pradesh 522501</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1180,7 +1215,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="logo">Mayuri Constructions</div>
-                    <p>Building excellence since 2015. We deliver quality construction services with integrity, precision, and dedication to our clients' vision.</p>
+                    <p>Building excellence since 2008. We deliver quality construction services with integrity, precision, and dedication to our clients' vision.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>

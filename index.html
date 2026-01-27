@@ -33,6 +33,7 @@
             --light-bg: #f4f4f4;
             --white: #ffffff;
             --dark-bg: #082032;
+            --whatsapp-green: #25d366;
         }
 
         /* --- HEADER & NAV --- */
@@ -44,10 +45,9 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            /* Removed default padding here to handle top bar separately */
         }
 
-        /* NEW TOP CONTACT BAR STYLES */
+        /* TOP CONTACT BAR STYLES */
         .header-top {
             background-color: var(--dark-bg);
             padding: 8px 0;
@@ -56,7 +56,7 @@
         }
         .header-contact {
             display: flex;
-            justify-content: flex-end; /* Pushes content to the right */
+            justify-content: flex-end;
             gap: 25px;
         }
         .header-contact a {
@@ -76,7 +76,7 @@
 
         /* NAV AREA STYLES */
         .nav-wrapper {
-            padding: 0.5rem 0; /* Original padding moved here */
+            padding: 0.5rem 0;
         }
         .container {
             width: 90%;
@@ -93,9 +93,8 @@
             align-items: center;
         }
         
-        /* INCREASED LOGO SIZE */
         .logo img {
-            height: 90px; /* Increased from 60px */
+            height: 90px;
             width: auto;
             border-radius: 5px;
             transition: height 0.3s;
@@ -133,7 +132,6 @@
         /* --- HERO SECTION --- */
         #hero {
             min-height: 100vh;
-            /* Using the Raw GitHub URL for header.png */
             background: linear-gradient(rgba(12, 45, 72, 0.85), rgba(12, 45, 72, 0.85)), url('https://raw.githubusercontent.com/jogendraswamy/mayuri.github.io/main/header.png');
             background-size: cover;
             background-position: center;
@@ -144,7 +142,6 @@
             align-items: center;
             text-align: center;
             color: var(--white);
-            /* INCREASED TOP PADDING TO ACCOUNT FOR TALLER HEADER */
             padding: 160px 20px 60px; 
         }
         #hero h1 {
@@ -283,12 +280,44 @@
             background: #f9f9f9;
             text-align: center;
         }
+        
+        .team-leader {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-leader .team-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 30px;
+            max-width: 800px !important;
+            width: 95%;
+            margin: 0 auto;
+        }
+        
+        .team-leader .team-avatar {
+            margin: 0;
+            flex-shrink: 0;
+            width: 150px; 
+            height: 150px;
+            font-size: 3rem;
+        }
+
+        .md-info {
+            flex-grow: 1;
+        }
+        
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 0;
         }
+        
         .team-card {
             background: var(--white);
             padding: 2rem;
@@ -314,11 +343,22 @@
         .team-card h3 {
             color: var(--primary-color);
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
         .team-card p {
             color: var(--accent-color);
             font-weight: bold;
             font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        
+        .team-desc {
+            font-weight: normal !important;
+            text-transform: none !important;
+            color: #555 !important;
+            margin-top: 1rem;
+            line-height: 1.5;
+            font-size: 0.95rem !important;
         }
 
         /* --- SERVICES SECTION --- */
@@ -591,6 +631,36 @@
             color: var(--primary-color);
         }
 
+        /* --- WHATSAPP FLOATING ICON --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+        }
+        /* Using SVG inside button, removing icon library dependency */
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
         /* --- FOOTER --- */
         footer {
             background: var(--dark-bg);
@@ -651,16 +721,16 @@
         }
         @media (max-width: 768px) {
             .header-top {
-                display: none; /* Optional: Hide top bar on mobile if too crowded */
+                display: none;
             }
             #hero {
-                padding-top: 120px; /* Adjust padding for mobile if top bar is hidden */
+                padding-top: 120px;
             }
             .header-contact {
                 justify-content: center;
             }
             .logo img {
-                height: 60px; /* Resize logo for mobile */
+                height: 60px;
             }
             #hero h1 { font-size: 2.2rem; }
             #hero p { font-size: 1.1rem; }
@@ -692,6 +762,16 @@
                 padding: 20px;
                 gap: 15px;
             }
+            
+            /* RESPONSIVE FIX FOR MD CARD */
+            .team-leader .team-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .team-leader .team-avatar {
+                margin-bottom: 1.5rem;
+            }
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -760,6 +840,12 @@
         </div>
     </header>
 
+    <a href="https://wa.me/919494888153" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
     <section id="hero">
         <h1>Quality Construction. Honest Pricing.</h1>
         <p>From residential dreams to commercial realities, we build with integrity, precision, and over 15 years of expertise.</p>
@@ -773,19 +859,19 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>100+</h3>
+                    <h3><span class="counter" data-target="100">0</span>+</h3>
                     <p>Projects Completed</p>
                 </div>
                 <div class="stat-item">
-                    <h3>15+</h3>
+                    <h3><span class="counter" data-target="15">0</span>+</h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
-                    <h3>150+</h3>
+                    <h3><span class="counter" data-target="150">0</span>+</h3>
                     <p>Team Members</p>
                 </div>
                 <div class="stat-item">
-                    <h3>98%</h3>
+                    <h3><span class="counter" data-target="98">0</span>%</h3>
                     <p>Client Satisfaction</p>
                 </div>
             </div>
@@ -833,30 +919,52 @@
         <div class="container">
             <h2 class="section-title">Meet My Team</h2>
             <p class="section-subtitle">The dedicated experts behind every quality project we build.</p>
+            
+            <div class="team-leader">
+                <div class="team-card">
+                    <div class="team-avatar">&#128104;</div>
+                    <div class="md-info"> <h3>Vinay Kumar Pulagam</h3>
+                        <p>Managing Director (MD)</p>
+                        <p class="team-desc">With a vision to redefine construction standards, Vinay leads with 15+ years of expertise, ensuring every project stands as a benchmark of quality and trust.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">&#128104;</div>
-                    <h3>Senior Architect</h3>
-                    <p>Design & Planning</p>
+                    <h3>Mullaswamy Kandulapati</h3>
+                    <p>Chief Executive Officer (CEO)</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">&#128103;</div>
-                    <h3>Site Engineer</h3>
-                    <p>Project Execution</p>
+                    <h3>Ysahoda Sai Mane</h3>
+                    <p>Chief Financial Officer (CFO)</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">&#128104;</div>
-                    <h3>Safety Officer</h3>
-                    <p>Quality Control</p>
+                    <h3>Trimurthulu Pulagam</h3>
+                    <p>Sr. Manager Projects</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">&#128104;</div>
+                    <h3>Swamy Mane</h3>
+                    <p>Digital Marketing Manager</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">&#128104;</div>
+                    <h3>Seshagiri Kothapalli</h3>
+                    <p>Operational Manager (Vijayawada)</p>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">&#128103;</div>
-                    <h3>Client Manager</h3>
-                    <p>Customer Relations</p>
+                    <h3>Sudabattula Pushpa Sai</h3>
+                    <p>Operational Manager (Hyderabad)</p>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
@@ -1109,16 +1217,53 @@
     </footer>
 
     <script>
+        // MENU TOGGLE
         function toggleMenu() {
             document.getElementById('nav').classList.toggle('active');
         }
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('nav').classList.remove('active');
             });
         });
+
+        // COUNTER ANIMATION LOGIC
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; 
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Intersection Observer to trigger animation
+        const statsSection = document.querySelector('#stats');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(statsSection) {
+            observer.observe(statsSection);
+        }
     </script>
 
 </body>
